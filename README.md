@@ -1,6 +1,6 @@
 # StripHtml
 
-**TODO: Add description**
+Strips html from the input file
 
 ## Installation
 

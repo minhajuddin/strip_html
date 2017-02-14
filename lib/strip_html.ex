@@ -1,18 +1,18 @@
 defmodule StripHtml do
-  @moduledoc """
-  Documentation for StripHtml.
-  """
 
-  @doc """
-  Hello world.
+  def main([filepath]) do
+    File.stream!(filepath)
+    |> Enum.map(fn line ->
+      line
+      |> HtmlSanitizeEx.strip_tags
+      |> IO.puts
+    end)
+  end
 
-  ## Examples
-
-      iex> StripHtml.hello
-      :world
-
-  """
-  def hello do
-    :world
+  def main(_) do
+    IO.puts """
+    Usage:
+        ./strip_html input_file
+    """
   end
 end

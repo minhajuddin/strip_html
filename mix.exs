@@ -5,6 +5,7 @@ defmodule StripHtml.Mixfile do
     [app: :strip_html,
      version: "0.1.0",
      elixir: "~> 1.4",
+     escript: [main_module: StripHtml],
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps()]
@@ -28,6 +29,6 @@ defmodule StripHtml.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [{:html_sanitize_ex, "~> 1.0.0"}]
   end
 end
